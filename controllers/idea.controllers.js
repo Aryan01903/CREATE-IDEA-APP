@@ -5,6 +5,9 @@
 *
 */
 const ideas = require("../models/idea.model")
+
+let id=3        // initial count of id
+
 /* 
 *   create the controller for fetching all the ideas
 *
@@ -42,5 +45,28 @@ exports.getIdeasBasedonId=(req,res,next)=>{
      
       //if present then return id 
  
+
+}
+
+/**
+ * Controller to create new idea
+ */
+
+exports.CreateIdea=(req,res)=>{
+    
+    // I need to request the body
+    idea_object=req.body
+    id++
+    idea_object["id"]=id   // setting the id in the new created object
+    ideas.id= idea_object
+    // Add the new object provided n the ideas 
+
+
+    // Return the response
+    res.status(201).send(idea_object)
+
+
+    
+
 
 }

@@ -11,4 +11,9 @@ module.exports=(app)=>{
 
     // Route for ideaApp/api/v1/ideas/:id
     app.get("/ideaApp/api/v1/ideas/:id",idea_controllers.getIdeasBasedonId)
+
+    // POST 127.0.0.1:8000/ideaApp/api/v1/ideas
+    app.post("/ideaApp/api/v1/ideas", function(req,res){
+        idea_controllers.createIdea
+    })
 }
